@@ -1,11 +1,12 @@
 .header {
-  padding-top: 40px;
+  padding: 40px 0px;
   position: fixed;
   background-color: white;
+  width: 100vw;
 
   ul {
     display: flex;
-    padding-left: 150px;
+    padding-left: 125px;
     li {
       color: #49362b;
       margin-right: 20px;
