@@ -1,0 +1,80 @@
+.reviews-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  width: 100%;
+
+  .review-block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(60, 114, 90, 0.1);
+    padding: 15px;
+
+    .date {
+      text-align: right;
+      color: #af9b8f;
+      font-weight: 400;
+      font-size: 20px;
+      user-select: none;
+    }
+
+    .text {
+      flex: 1;
+      font-weight: 400;
+      font-size: 16px;
+      text-align: justify;
+      margin: 20px;
+
+      color: #414141;
+      display: flex;
+      align-items: center;
+    }
+
+    .name {
+      font-weight: 600;
+      font-size: 18px;
+      color: #49362b;
+    }
+  }
+
+  svg {
+    opacity: 0.5;
+    cursor: pointer;
+    margin: 0px 100px 0px 200px;
+    width: 30px;
+    height: auto;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.progress {
+  margin: 50px 0px;
+  width: 500px;
+
+  p {
+    user-select: none;
+    margin-bottom: 10px;
+    color: #af9b8f;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  progress {
+    width: 100%;
+    border: none;
+    height: 10px;
+  }
+
+  progress::-webkit-progress-bar {
+    background: #ebf1ef;
+  }
+
+  progress::-webkit-progress-value {
+    background: #3c725a;
+  }
+}

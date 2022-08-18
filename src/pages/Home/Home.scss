@@ -54,6 +54,7 @@
       background-color: #d7e3df;
       width: 50vw;
       height: 100vh;
+      z-index: 3;
 
       .date {
         display: flex;
@@ -162,6 +163,23 @@
       justify-content: center;
       display: flex;
       margin-top: 125px;
+    }
+  }
+
+  .reviews {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-family: "Philosopher";
+      font-weight: 700;
+      font-size: 55px;
+      margin: 100px 0px;
+
+      color: #49362b;
     }
   }
 }
