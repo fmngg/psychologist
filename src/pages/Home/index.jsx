@@ -2,17 +2,20 @@ import React, { useEffect } from "react";
 import Header from "../../components/Header";
 import "./Home.scss";
 
-import img from "../../assets/img/psychologist.png";
-import { services } from "../../assets/db";
+import portrait from "../../assets/img/psychologist.png";
+import footer from "../../assets/img/questions footer.png";
+import { services, questions } from "../../assets/db";
 
 import ServiceItem from "../../components/ServiceItem";
 import ReviewBlock from "../../components/ReviewBlock";
+import QuestionItem from "../../components/QuestionItem";
 
 const Home = () => {
   const mainRef = React.useRef();
   const aboutRef = React.useRef();
   const servicesRef = React.useRef();
   const reviewsRef = React.useRef();
+  const questionsRef = React.useRef();
 
   return (
     <div className="home">
@@ -21,6 +24,7 @@ const Home = () => {
         aboutRef={aboutRef}
         servicesRef={servicesRef}
         reviewsRef={reviewsRef}
+        questionsRef={questionsRef}
       />
       <div ref={mainRef} className="main">
         <div className="main__left">
@@ -36,7 +40,7 @@ const Home = () => {
             <p>августа</p>
             <p className="bold">2022</p>
           </div>
-          <img src={img} />
+          <img src={portrait} />
           <p className="desc">
             “Многие годы я веду курсы ортодоксального гиюра «Натив». Более 10
             лет провожу занятия для женихов и невест, семейных пар, а также
@@ -197,18 +201,30 @@ const Home = () => {
         <h1 className="services__title">Чем я могу Вам помочь</h1>
         <div className="services__items">
           {services.map((obj) => (
-            <ServiceItem
-              key={obj.id}
-              title={obj.title}
-              text={obj.text}
-              img={obj.img}
-            />
+            <ServiceItem key={obj.id} {...obj} />
           ))}
         </div>
       </div>
       <div ref={reviewsRef} className="reviews">
         <h1>Отзывы</h1>
         <ReviewBlock />
+      </div>
+      <div ref={questionsRef} className="questions">
+        <h1 className="questions__title">Вопросы</h1>
+        <div className="questions__items">
+          {questions.map((obj) => (
+            <QuestionItem key={obj.id} {...obj} />
+          ))}
+        </div>
+        <div className="questions__footer">
+          <img src={footer} />
+          <div className="desc">
+            <h1>Не нашли ответ на нужный вопрос?</h1>
+            <p>Задайте его прямо сейчас!</p>
+            <button>Задать вопрос</button>
+          </div>
+          <p className="copyright">© Ilya Fomin 2022. All rights reserved.</p>
+        </div>
       </div>
     </div>
   );

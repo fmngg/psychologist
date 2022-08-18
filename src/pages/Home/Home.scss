@@ -182,4 +182,90 @@
       color: #49362b;
     }
   }
+
+  .questions {
+    height: 50vh;
+    &__title {
+      font-family: "Philosopher";
+      font-weight: 700;
+      font-size: 55px;
+      padding: 100px 0px 0px;
+
+      color: #49362b;
+      margin-left: 125px;
+      margin-bottom: 50px;
+    }
+
+    &__footer {
+      position: relative;
+      margin-top: 50px;
+      background: #fffff0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 100px;
+      height: 40vh;
+
+      img {
+        position: absolute;
+        top: -30px;
+      }
+
+      .desc {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: 200px;
+        height: 100%;
+        padding: 50px;
+
+        h1 {
+          font-family: "Philosopher";
+          font-weight: 700;
+          font-size: 35px;
+          line-height: 39px;
+          color: #49362b;
+          margin-bottom: 30px;
+        }
+
+        p {
+          flex: 1;
+          font-family: "Montserrat";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 25px;
+          line-height: 30px;
+          color: #af9b8f;
+        }
+
+        button {
+          padding: 15px;
+          font-weight: 600;
+          color: white;
+          background: #3c725a;
+          border: none;
+          border-radius: 20px;
+          width: 200px;
+          cursor: pointer;
+
+          &:hover {
+            background: #376952;
+          }
+
+          &:active {
+            background: #33614b;
+          }
+        }
+      }
+
+      .copyright {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 15px;
+        color: #af9b8f;
+        opacity: 0.5;
+        user-select: none;
+      }
+    }
+  }
 }
