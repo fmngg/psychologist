@@ -77,4 +77,14 @@
   progress::-webkit-progress-value {
     background: #3c725a;
   }
+
+  .send-review {
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

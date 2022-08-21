@@ -10,12 +10,16 @@ import ServiceItem from "../../components/ServiceItem";
 import ReviewBlock from "../../components/ReviewBlock";
 import QuestionItem from "../../components/QuestionItem";
 
+import { FormContext } from "../../App";
+
 const Home = () => {
   const mainRef = React.useRef();
   const aboutRef = React.useRef();
   const servicesRef = React.useRef();
   const reviewsRef = React.useRef();
   const questionsRef = React.useRef();
+
+  const { setShowForm, setFormName } = React.useContext(FormContext);
 
   return (
     <div className="home">
@@ -221,7 +225,14 @@ const Home = () => {
           <div className="desc">
             <h1>Не нашли ответ на нужный вопрос?</h1>
             <p>Задайте его прямо сейчас!</p>
-            <button>Задать вопрос</button>
+            <button
+              onClick={() => {
+                setShowForm(true);
+                setFormName("вопрос");
+              }}
+            >
+              Задать вопрос
+            </button>
           </div>
           <p className="copyright">© Ilya Fomin 2022. All rights reserved.</p>
         </div>

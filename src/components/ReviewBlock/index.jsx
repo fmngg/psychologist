@@ -2,8 +2,11 @@ import React from "react";
 import "./ReviewBlock.scss";
 
 import { reviews } from "../../assets/db";
+import { FormContext } from "../../App";
 
 const ReviewBlock = () => {
+  const { setShowForm, setFormName } = React.useContext(FormContext);
+
   const [review, setReview] = React.useState(0);
 
   const onClickNext = () => {
@@ -55,6 +58,15 @@ const ReviewBlock = () => {
           {reviews[review].id + 1} / {reviews.length}
         </p>
         <progress max={reviews.length} value={reviews[review].id + 1} />
+        <p
+          className="send-review"
+          onClick={() => {
+            setShowForm(true);
+            setFormName("отзыв");
+          }}
+        >
+          Оставить отзыв
+        </p>
       </div>
     </>
   );
